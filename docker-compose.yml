@@ -1,0 +1,38 @@
+version: "2.1"
+services:
+  dhcp:
+    image: networkboot/dhcpd
+    restart: always
+    ports:
+      - 68:68
+      - 67:67
+    volumes:
+      - ./data/dhcp:/data
+    network_mode: "host"
+  netbootxyz:
+    image: lscr.io/linuxserver/netbootxyz
+    container_name: netbootxyz
+    environment:
+      - PUID=1000
+      - PGID=1000
+      - MENU_VERSION=1.9.9 #optional
+      - PORT_RANGE=30000:30010 #optional
+      - SUBFOLDER=/ #optional
+    volumes:
+      - ./data/config:/config
+      - ./data/assets:/assets #optional
+    ports:
+      - 3000:3000
+      - 69:69/udp
+      - 8080:80 #optional
+    restart: unless-stopped
+  webserver:
+    image: nginx
+    restart: always
+    ports: 
+      - 80:80
+    volumes:
+      - ./data/nginx/html:/usr/share/nginx/html
+    network_mode: "host"
+    
+  
