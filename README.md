@@ -39,13 +39,13 @@ Nun kann man das Betriebssystem auswählen das man möchte. Ganz unten in diesem
 
 ![Ubuntu](./img/ubuntuboot.png)
 
-Hier wird nun die Option mit (legacy) ausgesucht. Jetzt wählt man die option "Specify preseed/autoinsall url..." aus. Anschliessend muss der Pfad zum Preseed File angegeben werden.
+Hier wird nun die Option mit (legacy) ausgesucht. Jetzt wählt man die ption "Specify preseed/autoinsall url..." aus. Anschliessend muss der Pfad zum Preseed File angegeben werden.
 ```
 http://serverip/preseed.cfg
 ```
 Falls nun noch ein Menu auftaucht, muss lediglich einmal Enter gedrückt werden und das Betriebssystem wird automatisch installiert.
 
-# Installieren der Pakete im Anschuss
+# Installieren der Pakete im Anschluss
 
 Zuerst muss git installiert werden, damit das Script von git geklont werden kann. Anschliessend kann man dieses ausführen.
 ```
